@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="449.0" prefWidth="639.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TodoListFormController">
+<AnchorPane prefHeight="449.0" prefWidth="639.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.todolist.TodoListFormController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74b9ff" height="110.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="639.0" />
         <Label alignment="CENTER" layoutX="242.0" layoutY="7.0" prefHeight="31.0" prefWidth="156.0" stylesheets="@../css/style.css" text="TaskFlow">

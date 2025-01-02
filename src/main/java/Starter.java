@@ -15,5 +15,9 @@ public class Starter extends Application {
         scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+
+//        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
+////        new animatefx.animation.ZoomIn().play();
+//        stage.show();
     }
 }
