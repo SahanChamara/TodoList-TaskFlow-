@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="449.0" prefWidth="639.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TodoListFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74b9ff" height="110.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="639.0" />
+        <Label alignment="CENTER" layoutX="242.0" layoutY="7.0" prefHeight="31.0" prefWidth="156.0" stylesheets="@../css/style.css" text="TaskFlow">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="110.0" layoutX="39.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="561.0" />
+        <JFXTextField fx:id="txtAddTask" alignment="CENTER" layoutX="200.0" layoutY="65.0" onAction="#txtAddOnAction" prefHeight="25.0" prefWidth="241.0" promptText="What Would You Like To Do?...">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton layoutX="250.0" layoutY="118.0" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: #d63031;" stylesheets="@../css/style.css" text="Add Your Task" textFill="#fcfcfc">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <Label layoutX="20.0" layoutY="183.0" prefHeight="36.0" prefWidth="94.0" text="To Do List">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <ScrollPane fitToWidth="true" layoutX="26.0" layoutY="219.0" prefHeight="200.0" prefWidth="576.0" >
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="568.0">
+               <children>
+                  <VBox fx:id="vboxTaskList" prefHeight="200.0" prefWidth="567.0"/>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+    </children>
+</AnchorPane>

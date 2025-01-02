@@ -11,7 +11,9 @@ public class Starter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/todoList_home_form.fxml"))));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/todolist_form.fxml")));
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        stage.setScene(scene);
         stage.show();
     }
 }
