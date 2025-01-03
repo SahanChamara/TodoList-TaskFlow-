@@ -6,6 +6,7 @@ import model.TodoList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class TodoListController implements  TodoListService{
     private static TodoListController instance;
@@ -32,8 +33,17 @@ public class TodoListController implements  TodoListService{
     }
 
     @Override
-    public TodoList loadTasks() {
-        return null;
+    public ArrayList<TodoList> loadTasks() {
+        ArrayList<TodoList> todoListArrayList = new ArrayList<>();
+        try {
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT * FROM newtask");
+            while(rst.next()){
+                todoListArrayList.add(new TodoList(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4)));
+            }
+            return todoListArrayList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
