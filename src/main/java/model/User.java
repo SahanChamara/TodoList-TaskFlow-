@@ -9,9 +9,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class TodoList {
-    private String taskId;
-    private String taskName;
-    private String date;
+public class User {
     private String userId;
+    private String email;
+    private String userName;
+    private String password;
 }
