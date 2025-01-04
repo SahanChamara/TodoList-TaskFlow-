@@ -55,7 +55,7 @@ public class TodoListFormController implements Initializable {
         taskName.getStyleClass().add("task-label");
 
         //Check Box
-        CheckBox done = new CheckBox();
+        CheckBox done = new CheckBox("Completed");
         done.getStyleClass().add("check-box");
 
         // Date
@@ -97,13 +97,14 @@ public class TodoListFormController implements Initializable {
             HBox hBox = new HBox();
             hBox.setSpacing(30);
             hBox.getStyleClass().add("hbox-task");
+            listViewTask.getStyleClass().add("list-view");
 
             // Task Name Label
             Label taskName = new Label(todoList.getTaskName());
             taskName.getStyleClass().add("task-label");
 
             //Check Box
-            CheckBox done = new CheckBox();
+            CheckBox done = new CheckBox("Completed");
             done.getStyleClass().add("check-box");
 
             // Date

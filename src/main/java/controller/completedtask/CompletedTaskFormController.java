@@ -23,10 +23,10 @@ public class CompletedTaskFormController implements Initializable {
             taskName.getStyleClass().add("task-name-label");
 
             Label taskAssignedLbl = new Label("Task Assigned Date : " + completedTask.getTaskAssignedDate());
-//            taskAssignedLbl.getStyleClass().add("task-name-label");
+            taskAssignedLbl.getStyleClass().add("date-label");
 
             Label taskCompleteLbl = new Label("Task Completed Date : " + completedTask.getTaskCompletedDate());
-//            taskCompleteLbl.getStyleClass().add("date-label");
+            taskCompleteLbl.getStyleClass().add("date-label");
 
             vBox.getChildren().addAll(taskName, taskAssignedLbl,taskCompleteLbl);
 

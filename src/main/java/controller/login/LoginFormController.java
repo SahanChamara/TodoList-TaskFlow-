@@ -82,7 +82,7 @@ public class LoginFormController {
         if (LoginController.getInstance().authenticateUser(txtUserName.getText(), txtPassword.getText())) {
             Stage stage = new Stage();
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/todolist_form.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/css/todoList.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
         } else {

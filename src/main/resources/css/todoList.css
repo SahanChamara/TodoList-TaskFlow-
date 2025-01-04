@@ -1,0 +1,356 @@
+/* Color Variables */
+* {
+    -fx-primary: #3498db;
+    -fx-primary-dark: #2980b9;
+    -fx-secondary: #9b59b6;
+    -fx-secondary-dark: #8e44ad;
+    -fx-accent: #e74c3c;
+    -fx-background: #f8f9fa;
+    -fx-card: #ffffff;
+}
+
+/* Main Panel Styling */
+.main-panel {
+    -fx-background-color: -fx-background;
+    -fx-background-radius: 10;
+}
+
+/* Header Styling */
+.header-background {
+    -fx-fill: linear-gradient(to right, -fx-primary, -fx-primary-dark);
+    -fx-stroke: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
+
+.app-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.5, 0, 1);
+}
+
+/* Input Panel Styling */
+.input-panel {
+    -fx-fill: -fx-card;
+    -fx-stroke: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.task-input {
+    -jfx-focus-color: -fx-primary;
+    -jfx-unfocus-color: #bdc3c7;
+    -fx-font-size: 14px;
+}
+
+.task-input:focused {
+    -fx-prompt-text-fill: -fx-primary;
+}
+
+/* Date Picker Styling */
+.date-picker {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: -fx-primary;
+    -fx-background-radius: 0 3 3 0;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: -fx-primary-dark;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+/* Button Styling */
+.primary-button {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: derive(-fx-accent, -10%);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+.secondary-button {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: -fx-secondary-dark;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+/* List View Styling */
+.task-list {
+    -fx-background-color: -fx-card;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.task-list .list-cell {
+    -fx-padding: 10 5;
+    -fx-background-color: transparent;
+}
+
+.task-list .list-cell:filled:selected {
+    -fx-background-color: derive(-fx-primary, 90%);
+}
+
+.task-list .list-cell:filled:hover {
+    -fx-background-color: derive(-fx-primary, 95%);
+}
+
+/* Title Styling */
+.panel-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Back Button Styling */
+.back-button {
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+.back-button:hover {
+    -fx-opacity: 1;
+}
+
+/* Animations */
+.primary-button, .secondary-button {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+
+
+
+/* Task Label Enhanced Styling */
+.task-label {
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI Semibold", "Arial", sans-serif;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 10px 0 5px;
+    -fx-min-width: 200px;
+    -fx-cursor: hand;
+    -fx-font-weight:600;
+}
+
+.task-label:hover {
+    -fx-text-fill: #3498db;
+    -fx-underline: false;
+}
+
+/* Enhanced Date Label Styling */
+.date-label {
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 0 15px;
+    -fx-background-radius: 3px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+    -fx-font-weight:600;
+}
+
+/* Enhanced CheckBox Styling */
+.check-box {
+    -fx-padding: 5px 10px;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 4px;
+    -fx-border-width: 2px;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-font-weight:600;
+}
+
+.check-box:hover .box {
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 5, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+.check-box .mark {
+    -fx-shape: "M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z";
+    -fx-min-width: 10px;
+    -fx-min-height: 10px;
+    -fx-max-width: 10px;
+    -fx-max-height: 10px;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* Row Container Styling */
+.hbox-task {
+    -fx-spacing: 15;
+    -fx-padding: 8px 15px;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #ecf0f1 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.hbox-task:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Optional: Animation for checkbox */
+.check-box .box {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.check-box:selected .box {
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+    -fx-transition: all 0.2s ease-out;
+}
+
+/* Optional: Status indicators */
+.task-overdue .date-label {
+    -fx-text-fill: #e74c3c;
+    -fx-background-color: #fde9e8;
+    -fx-border-color: #fadbd9;
+}
+
+.task-today .date-label {
+    -fx-text-fill: #27ae60;
+    -fx-background-color: #e8f6f0;
+    -fx-border-color: #d1eee1;
+}
+
+/* Optional: Priority indicators - can be applied programmatically */
+.task-high-priority .task-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c;
+}
+
+.task-medium-priority .task-label {
+    -fx-text-fill: #f39c12;
+}
+
+
+
+/* HBox Styling */
+.hbox-task {
+    -fx-padding: 10px 15px;
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-alignment: center-left;
+}
+
+.hbox-task:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Task Label Styling */
+.task-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-min-width: 200px;
+}
+
+/* Date Label Styling */
+.date-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* CheckBox Styling */
+.check-box {
+    -fx-padding: 5px;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 3px;
+    -fx-border-width: 2px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3498db;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* ListView Styling */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+    -fx-border-width: 0;
+}
+
+.list-view .list-cell {
+    -fx-padding: 5px 0;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5px;
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5px;
+}
+
+.list-view .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+/* Add Task Button styling (if needed) */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}

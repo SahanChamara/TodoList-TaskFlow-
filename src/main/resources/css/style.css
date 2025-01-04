@@ -1,58 +1,86 @@
-/* General styling for VBox container */
-#vboxTaskList {
-    -fx-padding: 10;
-    -fx-spacing: 10;
-    -fx-background-color: #f5f6fa;
-    -fx-border-color: #dcdde1;
-    -fx-border-width: 2;
-    -fx-border-radius: 10;
-    -fx-background-radius: 10;
+/* Main Colors */
+* {
+    -fx-primary: #2962FF;
+    -fx-secondary: #FF6D00;
+    -fx-primary-dark: #0D47A1;
+    -fx-secondary-dark: #E65100;
+    -fx-light-gray: #F5F5F5;
+    -fx-focus-color: -fx-primary;
 }
 
-/* HBox styling for each task */
-.hbox-task {
-    -fx-padding: 10;
-    -fx-spacing: 15;
-    -fx-alignment: CENTER_LEFT;
-    -fx-background-color: #dfe6e9;
-    -fx-border-color: #b2bec3;
-    -fx-border-width: 1;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 3, 3);
+/* Left Panel Styling */
+.left-panel {
+    -fx-background-color: linear-gradient(to bottom right, -fx-primary, -fx-primary-dark);
 }
 
-/* Styling for task name label */
-.task-label {
-    -fx-font-size: 16px;
+.tagline {
+    -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-text-fill: #2d3436;
-    -fx-text-spacing: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0.0, 0.0);
 }
 
-/* Styling for Date label */
-.date-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #636e72;
-    -fx-padding: 5;
-    -fx-border-color: #dcdde1;
-    -fx-border-width: 1;
+/* Form Panel Styling */
+.form-panel {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Title Styling */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-dark;
+}
+
+/* JFoenix TextField Styling */
+.jfx-text-field {
+    -jfx-focus-color: -fx-primary;
+    -jfx-unfocus-color: #BDBDBD;
+    -fx-prompt-text-fill: #757575;
+}
+
+.jfx-text-field:focused {
+    -fx-prompt-text-fill: -fx-primary;
+}
+
+/* Button Styling */
+.primary-button {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: -fx-primary-dark;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-primary;
+    -fx-border-color: -fx-primary;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-background-color: #f1f2f6;
+    -fx-cursor: hand;
 }
 
-/* Styling for CheckBox */
-.check-box {
-    -fx-font-size: 14px;
-    -fx-text-fill: #2d3436;
-    -fx-padding: 5;
+.secondary-button:hover {
+    -fx-background-color: -fx-light-gray;
 }
 
-.check-box:selected .box {
-    -fx-background-color: #00b894;
+/* Back Button Styling */
+.back-button {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
 }
 
-.check-box:selected .mark {
-    -fx-stroke: #ffffff;
+.back-button:hover {
+    -fx-opacity: 1;
+}
+
+/* Animation */
+.primary-button, .secondary-button {
+    -fx-transition: all 0.2s ease-in-out;
 }
