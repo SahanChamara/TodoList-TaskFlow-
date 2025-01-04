@@ -4,29 +4,34 @@ import com.jfoenix.controls.JFXListView;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import model.CompletedTask;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CompletedTaskFormController implements Initializable {
     public JFXListView listView;
 
-    private void setTasks(){
-        for (int i=0; i<10; i++){
+    private void setTasks() {
+        ArrayList<CompletedTask> completedTaskArrayList = CompletedTaskController.getInstance().loadCompletedTask();
+        completedTaskArrayList.forEach(completedTask -> {
             VBox vBox = new VBox();
             vBox.getStyleClass().add("vbox");
 
-            Label taskName = new Label("Complete the JavaFX Project");
+            Label taskName = new Label(completedTask.getTaskName());
             taskName.getStyleClass().add("task-name-label");
 
-            Label date = new Label("2025/01/05");
-            date.getStyleClass().add("date-label");
+            Label taskAssignedLbl = new Label("Task Assigned Date : " + completedTask.getTaskAssignedDate());
+//            taskAssignedLbl.getStyleClass().add("task-name-label");
 
-            vBox.getChildren().addAll(taskName,date);
+            Label taskCompleteLbl = new Label("Task Completed Date : " + completedTask.getTaskCompletedDate());
+//            taskCompleteLbl.getStyleClass().add("date-label");
+
+            vBox.getChildren().addAll(taskName, taskAssignedLbl,taskCompleteLbl);
 
             listView.getItems().add(vBox);
-        }
-//        listView.getItems().add(vBox);
+        });
     }
 
 

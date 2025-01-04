@@ -19,7 +19,19 @@
             <left>
                 <Pane prefHeight="400.0" prefWidth="273.0" style="-fx-background-color: #0984e3;" BorderPane.alignment="CENTER">
                     <children>
-                        <Pane prefHeight="400.0" prefWidth="316.0" />
+                        <Pane prefHeight="400.0" prefWidth="316.0">
+                     <children>
+                        <ImageView fitHeight="302.0" fitWidth="199.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../background_image/maintitle4.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="4.0" layoutY="184.0" prefHeight="30.0" prefWidth="261.0" text="Organize Smarter, Achieve Faster!">
+                           <font>
+                              <Font name="Franklin Gothic Heavy Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
                     </children>
                 </Pane>
             </left>

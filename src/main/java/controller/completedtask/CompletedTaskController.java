@@ -2,10 +2,12 @@ package controller.completedtask;
 
 import DBConnection.DBConnection;
 import com.google.protobuf.ApiProto;
+import model.CompletedTask;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CompletedTaskController implements CompletedTaskService {
     private static CompletedTaskService instance;
@@ -25,11 +27,25 @@ public class CompletedTaskController implements CompletedTaskService {
                 PreparedStatement prepareStm = DBConnection.getInstance().getConnection().prepareStatement("INSERT INTO completedtask VALUES(?,?,?,?)");
                 prepareStm.setString(1, generateId());
                 prepareStm.setString(2, rst.getString("TaskId"));
-                prepareStm.setString(3, rst.getString(" UserId"));
+                prepareStm.setString(3, rst.getString("UserId"));
                 prepareStm.setString(4, date);
                 return prepareStm.executeUpdate() > 0;
             }
             return false;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ArrayList<CompletedTask> loadCompletedTask() {
+        ArrayList<CompletedTask>completedTaskArrayList = new ArrayList<>();
+        try {
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT newtask.TaskName,newtask.date AS TaskAssignedDate,completedtask.CompletedDate FROM newTask INNER JOIN completedtask ON newtask.taskId=completedtask.taskId");
+            while (rst.next()){
+                completedTaskArrayList.add(new CompletedTask(rst.getString(1), rst.getString(2),rst.getString(3)));
+            }
+            return completedTaskArrayList;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

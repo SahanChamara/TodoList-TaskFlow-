@@ -36,7 +36,7 @@ public class TodoListController implements  TodoListService{
     public ArrayList<TodoList> loadTasks() {
         ArrayList<TodoList> todoListArrayList = new ArrayList<>();
         try {
-            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT * FROM newtask");
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT * FROM newtask WHERE userId='"+userId+"'");
             while(rst.next()){
                 todoListArrayList.add(new TodoList(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4)));
             }

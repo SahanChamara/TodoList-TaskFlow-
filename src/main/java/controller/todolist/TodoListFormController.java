@@ -48,12 +48,7 @@ public class TodoListFormController implements Initializable {
     void btnAddOnAction(ActionEvent event) {
         HBox hBox = new HBox();
         hBox.setSpacing(30);
-
-//        vboxTaskList.getStyleClass().add("vbox-task-list");
-//        vboxTaskList.setPrefHeight(vboxTaskList.getChildren().size() * 50); // Adjust 50 based on task height
-//        vboxTaskList.setFillWidth(true);
         hBox.getStyleClass().add("hbox-task");
-//        scrollPane.setPannable(true);
 
         // Task Name Label
         Label taskName = new Label(txtAddTask.getText());
@@ -69,9 +64,11 @@ public class TodoListFormController implements Initializable {
         lblDate.getStyleClass().add("date-label");
 
         // Remove the selected Task in Table and newTask Table in Database
-        done.setOnAction(actionEvent -> {
+        done.setOnMouseClicked(actionEvent -> {
             if (done.isSelected()) {
-                CompletedTaskController.getInstance().completedTask(txtAddTask.getText(),new SimpleDateFormat("yyyy/MM/dd").format(new Date()));
+                if (CompletedTaskController.getInstance().completedTask(taskName.getText(), new SimpleDateFormat("yyyy/MM/dd").format(new Date()))) {
+                    new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                }
                 listViewTask.getItems().remove(hBox);
             }
         });
@@ -99,12 +96,7 @@ public class TodoListFormController implements Initializable {
         todoListArrayList.forEach(todoList -> {
             HBox hBox = new HBox();
             hBox.setSpacing(30);
-
-//            vboxTaskList.getStyleClass().add("vbox-task-list");
-//            vboxTaskList.setPrefHeight(vboxTaskList.getChildren().size() * 50); // Adjust 50 based on task height
             hBox.getStyleClass().add("hbox-task");
-//            vboxTaskList.setFillWidth(true);
-//            scrollPane.setPannable(true);
 
             // Task Name Label
             Label taskName = new Label(todoList.getTaskName());
@@ -123,8 +115,11 @@ public class TodoListFormController implements Initializable {
             listViewTask.getItems().add(hBox);
 
             // Remove the selected Task in Table and newTask Table in Database
-            done.setOnAction(actionEvent -> {
+            done.setOnMouseClicked(actionEvent -> {
                 if (done.isSelected()) {
+                    if (CompletedTaskController.getInstance().completedTask(taskName.getText(), new SimpleDateFormat("yyyy/MM/dd").format(new Date()))) {
+                        new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                    }
                     listViewTask.getItems().remove(hBox);
                 }
             });
