@@ -2,6 +2,7 @@ package controller.completedtask;
 
 import DBConnection.DBConnection;
 import com.google.protobuf.ApiProto;
+import controller.todolist.TodoListController;
 import model.CompletedTask;
 
 import java.sql.PreparedStatement;
@@ -26,7 +27,7 @@ public class CompletedTaskController implements CompletedTaskService {
             if (rst.next()) {
                 PreparedStatement prepareStm = DBConnection.getInstance().getConnection().prepareStatement("INSERT INTO completedtask VALUES(?,?,?,?)");
                 prepareStm.setString(1, generateId());
-                prepareStm.setString(2, rst.getString("TaskId"));
+                prepareStm.setString(2, taskName);
                 prepareStm.setString(3, rst.getString("UserId"));
                 prepareStm.setString(4, date);
                 return prepareStm.executeUpdate() > 0;
@@ -41,7 +42,7 @@ public class CompletedTaskController implements CompletedTaskService {
     public ArrayList<CompletedTask> loadCompletedTask() {
         ArrayList<CompletedTask>completedTaskArrayList = new ArrayList<>();
         try {
-            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT newtask.TaskName,newtask.date AS TaskAssignedDate,completedtask.CompletedDate FROM newTask INNER JOIN completedtask ON newtask.taskId=completedtask.taskId");
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT newtask.TaskName,newtask.date AS TaskAssignedDate,completedtask.CompletedDate FROM newTask RIGHT JOIN completedtask ON newtask.userId=completedtask.userId WHERE completedtask.userid='"+ TodoListController.getInstance().getUserId() +"'");
             while (rst.next()){
                 completedTaskArrayList.add(new CompletedTask(rst.getString(1), rst.getString(2),rst.getString(3)));
             }

@@ -38,6 +38,7 @@ public class TodoListFormController implements Initializable {
     public AnchorPane pnlMainView;
     public ImageView btnCompletedTaskView;
     public JFXListView listViewTask;
+    public HBox hBoxUserName;
     @FXML
     private JFXTextField txtAddTask;
 
@@ -67,8 +68,11 @@ public class TodoListFormController implements Initializable {
         done.setOnMouseClicked(actionEvent -> {
             if (done.isSelected()) {
                 if (CompletedTaskController.getInstance().completedTask(taskName.getText(), new SimpleDateFormat("yyyy/MM/dd").format(new Date()))) {
-                    new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                    if (TodoListController.getInstance().deleteCompletedTask(taskName.getText())) {
+                        new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                    }
                 }
+
                 listViewTask.getItems().remove(hBox);
             }
         });
@@ -119,7 +123,9 @@ public class TodoListFormController implements Initializable {
             done.setOnMouseClicked(actionEvent -> {
                 if (done.isSelected()) {
                     if (CompletedTaskController.getInstance().completedTask(taskName.getText(), new SimpleDateFormat("yyyy/MM/dd").format(new Date()))) {
-                        new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                        if (TodoListController.getInstance().deleteCompletedTask(taskName.getText())) {
+                            new Alert(Alert.AlertType.INFORMATION, "Task Finish...").show();
+                        }
                     }
                     listViewTask.getItems().remove(hBox);
                 }
@@ -129,10 +135,8 @@ public class TodoListFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setuserName();
         loadExistingTasktoUI();
-    }
-
-    public void btnAddTaskViewOnAction(ActionEvent actionEvent) {
     }
 
     public void btnViewCompletedTaskOnAction(ActionEvent actionEvent) throws IOException {
@@ -144,6 +148,13 @@ public class TodoListFormController implements Initializable {
     }
 
     public void btnCompletedViewBackMouseClick(MouseEvent mouseEvent) {
+
+    }
+
+    private void setuserName() {
+        Label userNameLbl = new Label("Hello " + TodoListController.getInstance().getuUserName());
+        userNameLbl.getStyleClass().add("userName-label");
+        hBoxUserName.getChildren().add(userNameLbl);
 
     }
 }

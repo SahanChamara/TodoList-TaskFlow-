@@ -160,6 +160,16 @@
     -fx-underline: false;
 }
 
+.userName-label{
+     -fx-font-size: 20px;
+    -fx-font-family: "Segoe UI Semibold", "Arial", sans-serif;
+    -fx-text-fill: #fff;
+    -fx-padding: 0 10px 0 5px;
+    -fx-min-width: 200px;
+    -fx-cursor: hand;
+    -fx-font-weight:700;
+}
+
 /* Enhanced Date Label Styling */
 .date-label {
     -fx-font-size: 13px;

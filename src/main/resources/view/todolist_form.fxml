@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -7,9 +8,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pnlMainView" prefHeight="471.0" prefWidth="639.0" stylesheets="/css/todoList.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.todolist.TodoListFormController">
     <children>
@@ -18,8 +19,7 @@
             <children>
                 <Label layoutX="209.0" layoutY="20.0" styleClass="panel-title" text="Completed Task View" />
 
-                <ImageView fx:id="btnCompletedTaskView" fitHeight="44.0" fitWidth="55.0" layoutX="25.0" layoutY="16.0"
-                           onMouseClicked="#btnCompletedViewBackMouseClick" pickOnBounds="true" preserveRatio="true" styleClass="back-button">
+                <ImageView fx:id="btnCompletedTaskView" fitHeight="44.0" fitWidth="55.0" layoutX="25.0" layoutY="16.0" onMouseClicked="#btnCompletedViewBackMouseClick" pickOnBounds="true" preserveRatio="true" styleClass="back-button">
                     <image>
                         <Image url="@../background_image/CompleteViewBackBtn.png" />
                     </image>
@@ -27,28 +27,25 @@
 
                 <JFXListView fx:id="listViewTask" layoutX="25.0" layoutY="216.0" prefHeight="211.0" prefWidth="595.0" styleClass="task-list" />
 
-                <JFXButton layoutX="457.0" layoutY="441.0" onAction="#btnViewCompletedTaskOnAction"
-                           styleClass="secondary-button" text="View Completed Task" />
+                <JFXButton layoutX="457.0" layoutY="430.0" onAction="#btnViewCompletedTaskOnAction" styleClass="secondary-button" text="View Completed Task" />
             </children>
         </Pane>
 
         <!-- Header Section -->
-        <Rectangle styleClass="header-background" arcHeight="5.0" arcWidth="5.0" height="110.0" layoutY="-7.0" width="639.0" />
-        <Label alignment="CENTER" layoutX="242.0" layoutY="7.0" styleClass="app-title" text="TaskFlow" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="110.0" layoutY="-7.0" styleClass="header-background" width="639.0" />
+        <Label alignment="CENTER" layoutX="296.0" layoutY="11.0" styleClass="app-title" text="TaskFlow" />
 
         <!-- Task Input Section -->
-        <Rectangle styleClass="input-panel" arcHeight="15.0" arcWidth="15.0" height="132.0" layoutX="39.0" layoutY="50.0" width="561.0" />
+        <Rectangle arcHeight="15.0" arcWidth="15.0" height="132.0" layoutX="39.0" layoutY="50.0" styleClass="input-panel" width="561.0" />
 
-        <JFXTextField fx:id="txtAddTask" alignment="CENTER" layoutX="200.0" layoutY="64.0" onAction="#txtAddOnAction"
-                      prefHeight="25.0" prefWidth="241.0" promptText="What Would You Like To Do?..." styleClass="task-input" />
+        <JFXTextField fx:id="txtAddTask" alignment="CENTER" layoutX="200.0" layoutY="64.0" onAction="#txtAddOnAction" prefHeight="25.0" prefWidth="241.0" promptText="What Would You Like To Do?..." styleClass="task-input" />
 
-        <DatePicker fx:id="dateTodo" layoutX="233.0" layoutY="104.0" prefHeight="10.0" prefWidth="174.0"
-                    promptText="Select Date" styleClass="date-picker" />
+        <DatePicker fx:id="dateTodo" layoutX="233.0" layoutY="104.0" prefHeight="10.0" prefWidth="174.0" promptText="Select Date" styleClass="date-picker" />
 
-        <JFXButton layoutX="250.0" layoutY="140.0" onAction="#btnAddOnAction"
-                   styleClass="primary-button" text="Add Your Task" />
+        <JFXButton layoutX="250.0" layoutY="140.0" onAction="#btnAddOnAction" styleClass="primary-button" text="Add Your Task" />
 
         <!-- To Do List Section -->
         <Label layoutX="20.0" layoutY="183.0" styleClass="section-title" text="To Do List" />
+      <HBox fx:id="hBoxUserName" prefHeight="31.0" prefWidth="230.0" />
     </children>
 </AnchorPane>

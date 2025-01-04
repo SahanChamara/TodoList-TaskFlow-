@@ -11,7 +11,7 @@
 
    <children>
 
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutY="-6.0" strokeType="INSIDE" width="639.0" styleClass="rectangle-header" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutY="-6.0" strokeType="INSIDE" width="642.0" styleClass="rectangle-header" />
 
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutX="135.0" layoutY="34.0" strokeType="INSIDE" width="384.0" styleClass="rectangle-subheader" />
 

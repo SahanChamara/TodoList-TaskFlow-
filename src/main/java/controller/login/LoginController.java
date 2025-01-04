@@ -38,7 +38,7 @@ public class LoginController implements LoginService {
         try {
             ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT UserId, UserName,Password FROM user WHERE UserName='" + userName + "' AND Password='" + password + "'");
             if (rst.next()) {
-                TodoListController.getInstance().setUserId(rst.getString(1));
+                TodoListController.getInstance().setUserId(rst.getString(1),rst.getString("UserName"));
                 return true;
             }
             return false;
