@@ -1,0 +1,72 @@
+/* Root styles */
+.root {
+    -fx-background-color: #f5f6fa;
+    -fx-font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ListView styling */
+.jfx-list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+}
+
+.jfx-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 15px;
+    -fx-border-color: transparent transparent #eee transparent;
+}
+
+.jfx-list-view .list-cell:hover {
+    -fx-background-color: #f8f9fa;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.2s ease-in-out;
+}
+
+.jfx-list-view .list-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+/* VBox styling */
+.vbox {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-padding: 12px;
+    -fx-spacing: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 2);
+    -fx-border-color: #eee;
+    -fx-border-radius: 6px;
+}
+
+.vbox:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 4);
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Label styling */
+.task-name-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+.date-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #636e72;
+}
+
+/* Header Rectangle styling */
+.header-rectangle {
+    -fx-arc-height: 0;
+    -fx-arc-width: 0;
+}
+
+/* Title Label styling */
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 2);
+}

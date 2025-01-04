@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="471.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.completedtask.CompletedTaskFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#feca57" height="70.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="639.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#48dbfb" height="48.0" layoutX="135.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="384.0" />
+      <Label alignment="CENTER" layoutX="246.0" layoutY="43.0" prefHeight="30.0" prefWidth="179.0" text="Completed Task" textFill="#341f97">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="listView" layoutX="27.0" layoutY="115.0" prefHeight="324.0" prefWidth="593.0" />
+   </children>
+</AnchorPane>

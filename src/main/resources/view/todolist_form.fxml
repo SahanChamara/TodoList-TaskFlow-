@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="449.0" prefWidth="639.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.todolist.TodoListFormController">
+<AnchorPane fx:id="pnlMainView" prefHeight="471.0" prefWidth="639.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.todolist.TodoListFormController">
     <children>
+      <Pane fx:id="pnlCompletedTask" prefHeight="475.0" prefWidth="639.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label layoutX="209.0" layoutY="20.0" prefHeight="36.0" prefWidth="222.0" text="Competed Task View">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="btnCompletedTaskView" fitHeight="44.0" fitWidth="55.0" layoutX="25.0" layoutY="16.0" onMouseClicked="#btnCompletedViewBackMouseClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../background_image/CompleteViewBackBtn.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="457.0" layoutY="441.0" onAction="#btnViewCompletedTaskOnAction" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #8e44ad;" text="View Completed Task" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="listViewTask" layoutX="25.0" layoutY="216.0" prefHeight="211.0" prefWidth="595.0" />
+         </children>
+      </Pane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74b9ff" height="110.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="639.0" />
         <Label alignment="CENTER" layoutX="242.0" layoutY="7.0" prefHeight="31.0" prefWidth="156.0" stylesheets="@../css/style.css" text="TaskFlow">
             <font>
@@ -34,15 +56,6 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
-      <ScrollPane fitToWidth="true" layoutX="26.0" layoutY="219.0" prefHeight="200.0" prefWidth="576.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="577.0">
-               <children>
-                  <VBox fx:id="vboxTaskList" prefHeight="200.0" prefWidth="576.0" />
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
       <DatePicker fx:id="dateTodo" layoutX="233.0" layoutY="104.0" prefHeight="10.0" prefWidth="174.0" promptText="Select Date" />
     </children>
 </AnchorPane>
