@@ -155,6 +155,12 @@ public class TodoListFormController implements Initializable {
         Label userNameLbl = new Label("Hello " + TodoListController.getInstance().getuUserName());
         userNameLbl.getStyleClass().add("userName-label");
         hBoxUserName.getChildren().add(userNameLbl);
+    }
 
+    public void btnLogOutMouseClick(MouseEvent mouseEvent) {
+        Stage currentStage = (Stage) listViewTask.getScene().getWindow();
+        if (currentStage != null) {
+            currentStage.close();
+        }
     }
 }

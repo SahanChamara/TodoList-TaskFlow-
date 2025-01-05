@@ -22,13 +22,13 @@ public class CompletedTaskFormController implements Initializable {
             Label taskName = new Label(completedTask.getTaskName());
             taskName.getStyleClass().add("task-name-label");
 
-            Label taskAssignedLbl = new Label("Task Assigned Date : " + completedTask.getTaskAssignedDate());
-            taskAssignedLbl.getStyleClass().add("date-label");
+//            Label taskAssignedLbl = new Label("Task Assigned Date : " + completedTask.getTaskAssignedDate());
+//            taskAssignedLbl.getStyleClass().add("date-label");
 
             Label taskCompleteLbl = new Label("Task Completed Date : " + completedTask.getTaskCompletedDate());
             taskCompleteLbl.getStyleClass().add("date-label");
 
-            vBox.getChildren().addAll(taskName, taskAssignedLbl,taskCompleteLbl);
+            vBox.getChildren().addAll(taskName, taskCompleteLbl);
 
             listView.getItems().add(vBox);
         });

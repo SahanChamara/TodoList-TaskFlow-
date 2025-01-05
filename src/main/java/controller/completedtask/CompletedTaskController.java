@@ -42,9 +42,9 @@ public class CompletedTaskController implements CompletedTaskService {
     public ArrayList<CompletedTask> loadCompletedTask() {
         ArrayList<CompletedTask>completedTaskArrayList = new ArrayList<>();
         try {
-            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT newtask.TaskName,newtask.date AS TaskAssignedDate,completedtask.CompletedDate FROM newTask RIGHT JOIN completedtask ON newtask.userId=completedtask.userId WHERE completedtask.userid='"+ TodoListController.getInstance().getUserId() +"'");
+            ResultSet rst = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT TaskName,completeddate FROM completedtask WHERE userid='"+ TodoListController.getInstance().getUserId() +"'");
             while (rst.next()){
-                completedTaskArrayList.add(new CompletedTask(rst.getString(1), rst.getString(2),rst.getString(3)));
+                completedTaskArrayList.add(new CompletedTask(rst.getString(1),null,rst.getString(2)));
             }
             return completedTaskArrayList;
         } catch (SQLException e) {

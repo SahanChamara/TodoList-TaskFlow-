@@ -76,7 +76,7 @@ public class TodoListController implements TodoListService {
 
     @Override
     public String getuUserName() {
-        return this.userId;
+        return this.userName;
     }
 
     @Override
@@ -86,7 +86,6 @@ public class TodoListController implements TodoListService {
 
     @Override
     public boolean deleteCompletedTask(String taskName) {
-        System.out.println("method triger" + taskName);
         try {
             if(DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM newtask WHERE taskname='"+taskName+"'")>0){
                 return true;
